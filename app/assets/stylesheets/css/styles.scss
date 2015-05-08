@@ -315,7 +315,6 @@ background: none;
 /*--- Banner ----*/
 .banner-container {
     width: 100%;
-    height: 550px;
     position: relative;
     padding: 0px;
     box-shadow: 0px 0px 1px rgba(0,0,0,0.4);
@@ -328,7 +327,7 @@ background: none;
 
     .banner-container > img {
         width: 100%;
-        height: 550px;
+       
     }
 
 .banner-content {
@@ -426,7 +425,7 @@ padding:20px 10px;
 }
 #aboutUs .txtHead .fa {
 font-size: 58px;
-color: #5E5E5E;
+color: #7a2a2a;
 }
 .tileBox p{
     background-color: #f0f0f0;
@@ -435,6 +434,7 @@ color: #777777;
 padding: 20px;
 margin: 0px;
 }
+
 /*parlex*/
 .bg-parlex {
 padding-top: 0px;
@@ -609,7 +609,7 @@ display: inherit;
 
 .item-content .fa {
     position: absolute;
-    color: #646464;
+    color: #7a2a2a;
     font-size: 4.5em;
     top: 36px;
 }
