@@ -13,4 +13,12 @@
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
+//= require js/bootstrap.min.js
+//= require js/custom.js
+//= require js/jquery-1.8.2.min.js
+//= require js/jquery.cslider.js
+//= require js/jquery.isotope.min.js
+//= require js/jquery.nav.js
+//= require js/fancybox/jquery.fancybox.pack.js
+//= require js/owl-carousel/owl.carousel.js
 //= require_tree .
