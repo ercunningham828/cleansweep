@@ -55,24 +55,27 @@
 }
 .da-slide h2{
 	color: #7a2a2a;
-	font-size: 66px;
+	font-size: auto;
 	width: 70%;
-	top: 60px;
+	top: 25%;
+	margin-bottom: 40%;
 	z-index: 10;
-	text-shadow: 1px 1px 1px rgba(0,0,0,0.1); 
+	text-shadow: 2px 2px 2px #fff; 
 	font-weight: 700;
 	text-wrap: normal;
+	webkit‑text‑size‑adjust: 100%;
 }
 .da-slide p{
 	width: 60%;
-	top: 60%;
+	text-shadow: 2px 2px #fff;
+	top: 55%;
 	color: #7a2a2a;
-	font-size: 26px;
-	line-height: 30px;
-	height: 80px;
+	font-size: auto;
+	height: 120px;
 	overflow: hidden;
 	font-weight: 800;
 	font-style: bold;
+	-webkit-text-size-adjust: auto;
 }
 .da-slide .da-img{
 	text-align: center;
