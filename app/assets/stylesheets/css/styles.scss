@@ -315,6 +315,7 @@ background: none;
 /*--- Banner ----*/
 .banner-container {
     width: 100%;
+    min-height: 400 px;
     position: relative;
     padding: 0px;
     box-shadow: 0px 0px 1px rgba(0,0,0,0.4);
@@ -327,6 +328,7 @@ background: none;
 
     .banner-container > img {
         width: 100%;
+        min-height: 400px;
        
     }
 
@@ -336,6 +338,7 @@ background: none;
     top: 0px;
     left: 0px;
     right: 0px;
+    min-height: 400px;
 }
 
     .banner-content h2 {
@@ -956,6 +959,7 @@ footer {
 @media (max-width: 768px) {
     .banner-container {
         background-size: contain;
+        min-height: 400px;
     }
 
     .team-member .member-img img {
@@ -1025,6 +1029,7 @@ footer {
     .banner-container {
         background-size: contain;
         margin-top: 67px;
+        min-height: 400px;
     }
 
     .navbar-inverse .navbar-nav > li > a {
@@ -1071,6 +1076,7 @@ footer {
 @media (max-width: 320px) {
     .banner-container {
         background-size: contain;
+        min-height: 400px;
     }
 
     .da-slider {
