@@ -29,6 +29,8 @@ gem 'devise'
 gem 'bootstrap-sass'
  gem 'faker'
 gem "pundit"
+gem 'fullcalendar-rails'
+gem 'momentjs-rails', '~> 2.10.2'
 
 
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks

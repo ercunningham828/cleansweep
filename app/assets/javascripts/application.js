@@ -21,4 +21,7 @@
 //= require js/jquery.nav.js
 //= require js/fancybox/jquery.fancybox.pack.js
 //= require js/owl-carousel/owl.carousel.js
+//= require moment
+//= require fullcalendar
+//= require fullcalendar/gcal
 //= require_tree .
