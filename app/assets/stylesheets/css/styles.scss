@@ -126,6 +126,37 @@ font-size: 20px;
 color:#fff;
 margin: 4px;
 }
+
+.signupform {
+  color: #7a2a2a;
+  text-align: center;
+  margin-bottom: 20px;
+
+}
+
+.signinform {
+  color: #fff;
+  text-align: left;
+
+}
+ .form-inline .form-control {
+    display: inline-block;
+    width: auto;
+    vertical-align: middle;
+  
+    margin-bottom: 40px;
+}
+.page {
+      margin-left: 100px;
+  margin-top: 150px;
+  margin-bottom: 100px;
+}
+.alert {
+  margin-top: 100px;
+  margin-bottom: 0px;
+  margin-left:50px;
+  margin-right:50px;
+}
 /* Header 
 ----------------------------------------------*/
 .header {
@@ -375,7 +406,6 @@ background: none;
 .heading { 
     padding: 3px 10px;
     padding-bottom: 15px;
-    margin-bottom: 30px;
     display: block;
 }
 

@@ -1,8 +1,14 @@
 Rails.application.routes.draw do
+  get 'registrations/create'
+
+  devise_for :users
+  resources :users
   
-  get 'calendar' =>'calendar#index'
+
+  authenticated :user do
+    root to: 'users#show', as: :authenticated_root
+  end
+
   root 'welcome#index'
-
-
 
 end
