@@ -93,7 +93,9 @@ background: #E24040;
 }
 
 .btn-primary {
-    background: #FFB8B8#FFB8B8;
+    background: #FFF;
+    color: #CC4646;
+    font-weight: 700;
 }
 
 .form-control {
@@ -161,6 +163,25 @@ margin: 4px;
   line-height: normal;
   color: #FFB8B8;
   font-family: 'Source Sans Pro', sans-serif;
+}
+.edit a{
+    color: #fff;
+    background-color:#CC4646;
+    border-color:#FFB8B8;
+}
+.edit {
+    color: #fff;
+    background-color:#CC4646;
+    border-color:#FFB8B8;
+}
+.panel-heading h3{
+    color: #fff;
+    background-color:#CC4646;
+    border-color:#FFB8B8;
+}
+
+.panel-heading{
+    background-color:#CC4646;
 }
 
 .btn-sm{

@@ -1,8 +1,8 @@
 Rails.application.routes.draw do
-  get 'registrations/create'
-
+ 
   devise_for :users
   resources :users
+  resources :properties
   
 
   authenticated :user do
