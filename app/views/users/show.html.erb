@@ -1,8 +1,97 @@
-<div class="page">
-  <h1>Welcome <%=@user.name%>!</h1>
-<p> We are working to get this dashboard up and running for you. </p>
+ <%if @user.role=='Vendor'%>
+<script>
+  $(document).ready(function () {
+    $('a[data-toggle="tab"]').on('shown.bs.tab', function (e) {
+        $('#calendar').fullCalendar();
+    });
+    $('#bookings').tab('show');
+});
+</script>
+ <%else%>
+<script>
+  $(document).ready(function () {
+    $('#calendar').fullCalendar();
+    });
+</script>
+<%end%>
 
-<%= link_to destroy_user_session_path, method: :delete, class: 'btn btn-primary btn-sm' do %>
-              <span class="glyphicon glyphicon-log-out"></span>
-            <% end %>
-          </div>
+<div class="page">
+<div class="row">
+   <div class="col-md-8">
+     <div class="media">
+       <div class="media-body">
+         <h2 class="media-heading">Welcome <%= @user.name %>!</h2>
+         <small>email: <%=@user.email%></small>
+          </br>
+         <small>phone: <%=@user.phone_number || "na" %></small>
+       </div>
+     </div>
+   </div>
+ </div>
+
+
+<div class="page">
+<div class="row">
+   <div class="tabbable tabs-left">
+     <ul class="nav nav-tabs">
+       <%if @user.role=='Vendor'%>
+         <li class="active"><a href="#requests" data-toggle="tab">Requests</a></li>
+         <li><a href="#bookings" data-toggle="tab">Bookings</a></li>
+         <li><a href="#properties" data-toggle="tab">Properties</a></li>
+      <%else%>
+         <li class="active"><a href="#bookings" data-toggle="tab">Bookings</a></li>
+         <li><a href="#properties" data-toggle="tab">Properties</a></li>
+       <%end%>
+     </ul>
+    <div class="tab-content">
+      <%if @user.role=='Vendor'%>
+       <div class="tab-pane active" id="requests">
+        <div class='container'>
+         <div class="media">
+            <div class="media-body">
+               <h2 class="media-heading">
+                Requests
+              </h2>
+           </div>
+         </div>
+       </div>
+      </div>
+      <%end%>
+    <%if @user.role=='Customer'%>
+       <div class="tab-pane active" id="bookings">
+      <%else%>
+       <div class="tab-pane" id="bookings">
+      <%end%>
+        <div class='container'>
+         <div class="media">
+            <div class="media-body">
+               <h2 class="media-heading">
+                My Bookings
+              </h2>
+            </br>
+             <div id='calendar'></div>
+           </div>
+         </div>
+        </div>
+       </div>
+       <div class="tab-pane" id="properties">
+         <div class='container'>
+           <div class="media">
+            <div class="media-body">
+              <h2 class="media-heading">
+                My Properties
+              </h2>
+           </div>
+         </div>
+       </div>
+     </div>
+
+     </div>
+   
+   </div>
+
+ </div>
+</div>
+</div>
+
+

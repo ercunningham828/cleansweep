@@ -93,7 +93,7 @@ background: #E24040;
 }
 
 .btn-primary {
-    background: #CC4646;
+    background: #FFB8B8#FFB8B8;
 }
 
 .form-control {
@@ -147,15 +147,31 @@ margin: 4px;
     margin-bottom: 40px;
 }
 .page {
-      margin-left: 100px;
-  margin-top: 150px;
-  margin-bottom: 100px;
+   margin: 50px;
 }
 .alert {
-  margin-top: 100px;
-  margin-bottom: 0px;
-  margin-left:50px;
-  margin-right:50px;
+ margin: 50px;
+}
+
+.loggedinmenu{
+    padding: 5px 12px !important;
+  border-radius: 5px;
+  margin: 19px 0px;
+ font-size: 1.2em;
+  line-height: normal;
+  color: #FFB8B8;
+  font-family: 'Source Sans Pro', sans-serif;
+}
+
+.btn-sm{
+    background-color:#fff;
+    color:#CC4646;
+    border-color:#FFB8B8;
+}
+
+.tab-content{
+    margin: 30px;
+  min-height: 500px;
 }
 /* Header 
 ----------------------------------------------*/
