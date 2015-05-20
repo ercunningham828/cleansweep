@@ -1,0 +1,37 @@
+
+<%= form_for @property do |f| %>
+    <div class="form-group col-md-12">
+        <%=f.label :name %>
+        <%= f.text_field :name, class: 'form-control', placeholder: "Enter property name i.e. home, my cottage, Mom's house etc." %>
+         </div>
+       <div class="form-group col-md-12">
+         <%= f.label :street_address %>
+         <%= f.text_field :street_address, class: 'form-control', placeholder: "Enter Street Address" %>
+       </div>
+
+         <div class="form-group col-md-8">
+           <%= f.label :city%>
+            <%= f.text_field :city, class: 'form-control', placeholder: "Enter City" %>
+         </div>
+         <div class="form-group col-md-2">
+           <%= f.label :state%>
+            <%= f.text_field :state, class: 'form-control', placeholder: "Enter State" %>
+         </div>
+         <div class="form-group col-md-2">
+           <%= f.label :zipcode%>
+            <%= f.number_field :zipcode, class: 'form-control', placeholder: "Enter Zipcode" %>
+         </div>
+  
+       <div class="form-group col-md-4">
+         <%= f.label "Number of Bedrooms"%>
+          <%= f.number_field :bedrooms, class: 'form-control', placeholder: "" %>
+       </div>
+        <div class="form-group col-md-4">
+         <%= f.label "Number of Bathrooms"%>
+          <%= f.number_field :bathrooms, class: 'form-control', placeholder: "" %>
+       </div>
+      <div class="col-md-12">
+       <%= f.submit "Save", class: 'btn btn-success' %>
+      </div>
+    </div>
+   <%end%>

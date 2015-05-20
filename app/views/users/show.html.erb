@@ -65,11 +65,15 @@
         <div class='container'>
          <div class="media">
             <div class="media-body">
+              <%if @user.properties.count<1%>
+              <p class="warning"> You have <%=pluralize(@user.properties.count, 'property')%>.  Click the "Properties" tab to create a property before booking.</p>
+              <%end%>
+            </br>
                <h2 class="media-heading">
                 My Bookings
               </h2>
             </br>
-             <div id='calendar'></div>
+             <div class='col-md-8' id='calendar'></div>
            </div>
          </div>
         </div>
@@ -81,6 +85,12 @@
               <h2 class="media-heading">
                 My Properties
               </h2>
+              <div class="col-md-6">
+                <%= render @properties %>
+              </div>
+              <div class="col-md-4">
+                <button class='btn btn-primary btn-lg'><i class="glyphicon glyphicon-plus"></i><%= link_to " New Property", new_property_path(@property) %></button>
+              </div>
            </div>
          </div>
        </div>
