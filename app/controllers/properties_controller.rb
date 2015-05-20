@@ -7,7 +7,17 @@ class PropertiesController < ApplicationController
     @property=Property.new
   end
 
-  def delete
+  def destroy
+    @property = Property.find(params[:id])
+    name=@property.name
+
+     if @property.destroy
+       flash[:notice] = "\"#{name}\" was deleted successfully."
+       redirect_to root_path(tab:"properties")
+     else
+       flash[:error] = "There was an error deleting the property."
+       render :show
+     end
   end
 
   def create
@@ -15,11 +25,12 @@ class PropertiesController < ApplicationController
 
     if @property.save
        flash[:notice] = "Property was saved."
-       redirect_to root_path
+       redirect_to root_path(tab:"properties")
      else
        flash[:error] = "There was an error saving the property. Please try again."
        render :new
      end
+
   end
 
   def edit
@@ -31,7 +42,7 @@ class PropertiesController < ApplicationController
 
     if @property.update_attributes(property_params)
        flash[:notice] = "Property was updated."
-       redirect_to root_path
+       redirect_to root_path(tab:"properties")
      else
        flash[:error] = "There was an error saving the property. Please try again."
        render :new

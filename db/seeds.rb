@@ -20,6 +20,16 @@ require 'faker'
    admin.skip_confirmation!
    admin.save!
 
+   # Create Cleaner (vendor user)
+   emily = User.new(
+     name:     "Klean Cleaner",
+     email:    "cleaner@example.com",
+     password: "helloworld",
+     role: "Vendor",
+   )
+   emily.skip_confirmation!
+   emily.save!
+
   #create 10 different cleaners
 
   10.times do 

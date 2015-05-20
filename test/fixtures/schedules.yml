@@ -1,0 +1,35 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  user: 
+  monday_start: 2015-05-19 15:56:22
+  monday_end: 2015-05-19 15:56:22
+  tuesday_start: 2015-05-19 15:56:22
+  tuesday_end: 2015-05-19 15:56:22
+  wednesday_start: 2015-05-19 15:56:22
+  wednesday_end: 2015-05-19 15:56:22
+  thursday_start: 2015-05-19 15:56:22
+  thursday_end: 2015-05-19 15:56:22
+  friday_start: 2015-05-19 15:56:22
+  friday_end: 2015-05-19 15:56:22
+  saturday_start: 2015-05-19 15:56:22
+  saturday_end: 2015-05-19 15:56:22
+  sunday_start: 2015-05-19 15:56:22
+  sunday_end: 2015-05-19 15:56:22
+
+two:
+  user: 
+  monday_start: 2015-05-19 15:56:22
+  monday_end: 2015-05-19 15:56:22
+  tuesday_start: 2015-05-19 15:56:22
+  tuesday_end: 2015-05-19 15:56:22
+  wednesday_start: 2015-05-19 15:56:22
+  wednesday_end: 2015-05-19 15:56:22
+  thursday_start: 2015-05-19 15:56:22
+  thursday_end: 2015-05-19 15:56:22
+  friday_start: 2015-05-19 15:56:22
+  friday_end: 2015-05-19 15:56:22
+  saturday_start: 2015-05-19 15:56:22
+  saturday_end: 2015-05-19 15:56:22
+  sunday_start: 2015-05-19 15:56:22
+  sunday_end: 2015-05-19 15:56:22

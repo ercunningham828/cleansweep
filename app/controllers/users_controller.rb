@@ -9,5 +9,6 @@ class UsersController < ApplicationController
   def show
      @user=User.find(current_user)
      @properties=@user.properties
+     @schedule=@user.schedule
   end
 end
