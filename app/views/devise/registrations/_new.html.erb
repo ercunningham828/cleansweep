@@ -46,9 +46,17 @@
         <%= f.number_field :bathroom_rate, class: 'form-control', placeholder: "Enter rate" %>
 
       </div>
-   
+      <div class="col-md-12">
+        <h3>Zipcode</h3>
+        <small>Please enter your zipcode for your area.  This will help customers near you find your services.</small>
+      </br>
+      <div class="form-group col-md-4">
+        <%= f.label :zipcode%>
+        <%= f.number_field :zipcode, class: 'form-control', placeholder: "Enter zipcode" %>
+      </div>
+   </div>
         </div>
- 
+ </br>
         <div id="groupthree" class="hide">
             <h3>Set Your Password</h3>
        <div class="form-group">

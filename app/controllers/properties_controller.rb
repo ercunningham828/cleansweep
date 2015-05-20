@@ -22,6 +22,7 @@ class PropertiesController < ApplicationController
 
   def create
     @property=current_user.properties.build(property_params)
+    
 
     if @property.save
        flash[:notice] = "Property was saved."
@@ -39,6 +40,7 @@ class PropertiesController < ApplicationController
 
   def update
     @property = Property.find(params[:id])
+   
 
     if @property.update_attributes(property_params)
        flash[:notice] = "Property was updated."

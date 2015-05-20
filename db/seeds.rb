@@ -10,6 +10,18 @@ require 'faker'
    emily.skip_confirmation!
    emily.save!
 
+   #Create a property for Emily
+   property=emily.properties.new(
+    name: "Emily's House",
+    street_address: "250 Lehigh Lane",
+    city: "Bloomingdale",
+    state: "IL",
+    zipcode: "60108",
+    bathrooms: 2,
+    bedrooms: 2,
+    )
+   property.save!
+
   # Create Admin user
     admin = User.new(
      name:     "Admin",
@@ -21,19 +33,24 @@ require 'faker'
    admin.save!
 
    # Create Cleaner (vendor user)
-   emily = User.new(
+   cleaner = User.new(
      name:     "Klean Cleaner",
      email:    "cleaner@example.com",
      password: "helloworld",
      role: "Vendor",
-   )
-   emily.skip_confirmation!
-   emily.save!
+     base_rate: 20 + rand(15),
+     bedroom_rate: 5 + rand(10),
+     bathroom_rate: 10 + rand(5),
+     zipcode: 60108,
 
-  #create 10 different cleaners
+   )
+   cleaner.skip_confirmation!
+   cleaner.save!
+
+  #create 10 different vendors
 
   10.times do 
-    cleaner=User.new(
+    vendor=User.new(
       name: Faker::Name.name,
       email: Faker::Internet.email,
       password: Faker::Lorem.characters(10),
@@ -41,9 +58,32 @@ require 'faker'
       base_rate: 20 + rand(15),
       bedroom_rate: 5 + rand(10),
       bathroom_rate: 10 + rand(5),
+      zipcode: 60108,
       )
-    cleaner.skip_confirmation!
-    cleaner.save!
+    vendor.email="#{vendor.name.split(' ').join}@cleaner.com"
+    vendor.skip_confirmation!
+    vendor.save!
+  end
+
+  vendors=Vendor.all
+
+  #Set schedules for the cleaners
+  vendors.each do |x|
+    x.schedule.monday_start=Time.new(2000,1,1,(5+rand(4)),0,0)
+    x.schedule.monday_end=Time.new(2000,1,1,(15+rand(6)),0,0)
+    x.schedule.tuesday_start=Time.new(2000,1,1,(5+rand(4)),0,0)
+    x.schedule.tuesday_end=Time.new(2000,1,1,(15+rand(6)),0,0)
+    x.schedule.wednesday_start=Time.new(2000,1,1,(5+rand(4)),0,0)
+    x.schedule.wednesday_end=Time.new(2000,1,1,(15+rand(6)),0,0)
+    x.schedule.thursday_start=Time.new(2000,1,1,(5+rand(4)),0,0)
+    x.schedule.thursday_end=Time.new(2000,1,1,(15+rand(6)),0,0)
+    x.schedule.friday_start=Time.new(2000,1,1,(5+rand(4)),0,0)
+    x.schedule.friday_end=Time.new(2000,1,1,(15+rand(6)),0,0)
+    x.schedule.saturday_start=Time.new(2000,1,1,(5+rand(4)),0,0)
+    x.schedule.saturday_end=Time.new(2000,1,1,(15+rand(6)),0,0)
+    x.schedule.sunday_start=Time.new(2000,1,1,(5+rand(4)),0,0)
+    x.schedule.sunday_end=Time.new(2000,1,1,(15+rand(6)),0,0)
+    x.schedule.save
   end
 
   puts "Seed finished"

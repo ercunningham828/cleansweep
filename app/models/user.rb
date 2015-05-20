@@ -1,5 +1,4 @@
 class User < ActiveRecord::Base
-  after_save :create_schedule
   has_many :properties
   has_one :schedule
   # Include default devise modules. Others available are:
@@ -16,12 +15,28 @@ class User < ActiveRecord::Base
   scope :customers, -> { where(role: 'Customer') } 
   scope :vendors, -> { where(role: 'Vendor') } 
 
+  
+end
+class Customer < User;end
+class Vendor < User
+  after_create :create_schedule
+  after_initialize :set_long_lat
+  after_save :set_long_lat
+  
+  geocoded_by :coordinates
+
+  def set_long_lat
+    self.latitude=self.zipcode.to_s.to_lat
+    self.longitude=self.zipcode.to_s.to_lon
+  end
+
   def create_schedule
    schedule=Schedule.new
    schedule.user=self
    schedule.save
   end
-end
 
-class Customer < User;end
-class Vendor < User;end
+  def coordinates
+    cord=[self.latitude,self.longitude]
+  end
+end

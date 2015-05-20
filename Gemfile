@@ -32,7 +32,8 @@ gem "pundit"
 gem 'fullcalendar-rails'
 gem 'momentjs-rails', '~> 2.10.2'
 gem "font-awesome-rails"
-
+gem 'geocoder'
+gem 'area'
 
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
 gem 'turbolinks'
