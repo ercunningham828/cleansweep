@@ -1,0 +1,80 @@
+<div class="row">
+  <div class="page">
+<%= form_for @schedule do |f|%>
+    <div class="form-group col-md-12">
+       <div class="form-group col-md-3">
+        <%=f.label :monday_start %>
+        <%= f.time_field :monday_start, class: 'form-control'%>
+      </div>
+      <div class="form-group col-md-3">
+         <%=f.label :monday_end %>
+        <%= f.time_field :monday_end, class: 'form-control' %>
+         </div>
+       </div>
+         <div class="form-group col-md-12">
+       <div class="form-group col-md-3">
+        <%=f.label :tuesday_start %>
+        <%= f.time_field :tuesday_start, class: 'form-control'%>
+         </div>
+      <div class="form-group col-md-3">
+        <%=f.label :tuesday_end %>
+        <%= f.time_field :tuesday_end, class: 'form-control' %>
+         </div>
+           </div>
+          <div class="form-group col-md-12">
+       <div class="form-group col-md-3">
+        <%=f.label :wednesday_start %>
+        <%= f.time_field :wednesday_start, class: 'form-control'%>
+         </div>
+      <div class="form-group col-md-3">
+        <%=f.label :wednesday_end %>
+        <%= f.time_field :wednesday_end, class: 'form-control' %>
+         </div>
+           </div>
+           <div class="form-group col-md-12">
+       <div class="form-group col-md-3">
+        <%=f.label :thursday_start %>
+        <%= f.time_field :thursday_start, class: 'form-control'%>
+        </div>
+      <div class="form-group col-md-3">
+       <%=f.label :thursday_end %>
+        <%= f.time_field :thursday_end, class: 'form-control' %>
+         </div>
+           </div>
+          <div class="form-group col-md-12">
+       <div class="form-group col-md-3">
+        <%=f.label :friday_start %>
+        <%= f.time_field :friday_start, class: 'form-control'%>
+         </div>
+      <div class="form-group col-md-3">
+        <%=f.label :friday_end %>
+        <%= f.time_field :friday_end, class: 'form-control' %>
+         </div>
+           </div>
+            <div class="form-group col-md-12">
+       <div class="form-group col-md-3">
+        <%=f.label :saturday_start %>
+        <%= f.time_field :saturday_start, class: 'form-control'%>
+         </div>
+      <div class="form-group col-md-3">
+        <%=f.label :saturday_end %>
+        <%= f.time_field :saturday_end, class: 'form-control' %>
+         </div>
+           </div>
+           <div class="form-group col-md-12">
+       <div class="form-group col-md-3">
+        <%=f.label :sunday_start %>
+        <%= f.time_field :sunday_start, class: 'form-control'%>
+         </div>
+      <div class="form-group col-md-3">
+        <%=f.label :sunday_end %>
+        <%= f.time_field :sunday_end, class: 'form-control' %>
+         </div>
+           </div>
+      <div class="col-md-12">
+       <%= f.submit "Save", class: 'btn btn-success' %>
+      </div>
+    </div>
+   <%end%>
+ </div>
+</div>

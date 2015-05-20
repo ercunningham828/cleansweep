@@ -93,7 +93,9 @@ background: #E24040;
 }
 
 .btn-primary {
-    background: #CC4646;
+    background: #FFF;
+    color: #CC4646;
+    font-weight: 700;
 }
 
 .form-control {
@@ -125,6 +127,72 @@ background: #E24040;
 font-size: 20px;
 color:#fff;
 margin: 4px;
+}
+
+.signupform {
+  color: #7a2a2a;
+  text-align: center;
+  margin-bottom: 20px;
+
+}
+
+.signinform {
+  color: #fff;
+  text-align: left;
+
+}
+ .form-inline .form-control {
+    display: inline-block;
+    width: auto;
+    vertical-align: middle;
+  
+    margin-bottom: 40px;
+}
+.page {
+   margin: 50px;
+}
+.alert {
+ margin: 50px;
+}
+
+.loggedinmenu{
+    padding: 5px 12px !important;
+  border-radius: 5px;
+  margin: 19px 0px;
+ font-size: 1.2em;
+  line-height: normal;
+  color: #FFB8B8;
+  font-family: 'Source Sans Pro', sans-serif;
+}
+.edit a{
+    color: #fff;
+    background-color:#CC4646;
+    border-color:#FFB8B8;
+}
+.edit {
+    color: #fff;
+    background-color:#CC4646;
+    border-color:#FFB8B8;
+}
+.panel-heading h3{
+    color: #fff;
+    background-color:#CC4646;
+    border-color:#FFB8B8;
+}
+
+.panel-heading{
+    background-color:#CC4646;
+}
+
+.btn-sm{
+    background-color:#fff;
+    color:#CC4646;
+    border-color:#FFB8B8;
+}
+
+.tab-content{
+    margin: 30px;
+  min-height: 500px;
 }
 /* Header 
 ----------------------------------------------*/
@@ -375,7 +443,6 @@ background: none;
 .heading { 
     padding: 3px 10px;
     padding-bottom: 15px;
-    margin-bottom: 30px;
     display: block;
 }
 

@@ -1,7 +1,51 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rake db:seed (or created alongside the db with db:setup).
-#
-# Examples:
-#
-#   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
-#   Mayor.create(name: 'Emanuel', city: cities.first)
+require 'faker'
+ 
+  # Create Emily (customer user)
+   emily = User.new(
+     name:     "Emily Customer",
+     email:    "emily@example.com",
+     password: "helloworld",
+     role: "Customer",
+   )
+   emily.skip_confirmation!
+   emily.save!
+
+  # Create Admin user
+    admin = User.new(
+     name:     "Admin",
+     email:    "admin@example.com",
+     password: "helloworld",
+     role: "Customer",
+   )
+   admin.skip_confirmation!
+   admin.save!
+
+   # Create Cleaner (vendor user)
+   emily = User.new(
+     name:     "Klean Cleaner",
+     email:    "cleaner@example.com",
+     password: "helloworld",
+     role: "Vendor",
+   )
+   emily.skip_confirmation!
+   emily.save!
+
+  #create 10 different cleaners
+
+  10.times do 
+    cleaner=User.new(
+      name: Faker::Name.name,
+      email: Faker::Internet.email,
+      password: Faker::Lorem.characters(10),
+      role: "Vendor",
+      base_rate: 20 + rand(15),
+      bedroom_rate: 5 + rand(10),
+      bathroom_rate: 10 + rand(5),
+      )
+    cleaner.skip_confirmation!
+    cleaner.save!
+  end
+
+  puts "Seed finished"
+  puts "Emily and Admin user created"
+  puts "#{Vendor.count} vendors created"
