@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150518132022) do
+ActiveRecord::Schema.define(version: 20150519135622) do
 
   create_table "events", force: :cascade do |t|
     t.string   "name"
@@ -36,6 +36,28 @@ ActiveRecord::Schema.define(version: 20150518132022) do
   end
 
   add_index "properties", ["user_id"], name: "index_properties_on_user_id"
+
+  create_table "schedules", force: :cascade do |t|
+    t.integer  "user_id"
+    t.time     "monday_start"
+    t.time     "monday_end"
+    t.time     "tuesday_start"
+    t.time     "tuesday_end"
+    t.time     "wednesday_start"
+    t.time     "wednesday_end"
+    t.time     "thursday_start"
+    t.time     "thursday_end"
+    t.time     "friday_start"
+    t.time     "friday_end"
+    t.time     "saturday_start"
+    t.time     "saturday_end"
+    t.time     "sunday_start"
+    t.time     "sunday_end"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+  end
+
+  add_index "schedules", ["user_id"], name: "index_schedules_on_user_id"
 
   create_table "users", force: :cascade do |t|
     t.string   "name"
