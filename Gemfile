@@ -34,7 +34,7 @@ gem 'momentjs-rails', '~> 2.10.2'
 gem "font-awesome-rails"
 gem 'geocoder'
 gem 'area'
-
+gem 'wicked'
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
 gem 'turbolinks'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
@@ -47,6 +47,12 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 
 # Use Unicorn as the app server
 # gem 'unicorn'
+
+group :development do
+  gem "better_errors"
+end
+gem "binding_of_caller"
+
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
@@ -61,4 +67,3 @@ group :development, :test do
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
 end
-

@@ -1,9 +1,17 @@
 Rails.application.routes.draw do
-
   devise_for :users
   resources :users
   resources :properties
   resources :schedule
+  resources :bookings do 
+    member do
+      get 'confirm'
+      get 'reject'
+      get 'cancel'
+    end
+  end
+
+  resources :booking_steps 
   
 
   authenticated :user do

@@ -1,0 +1,18 @@
+<div class="page">
+  <div class="row">
+    <body>You've selected a booking with <%=@vendor.name%> on <%=@booking.date.strftime("%B %e, %Y")%>.  Please select a time for the booking.</body>
+  </br>
+  <%= form_for(@booking, :url=> wizard_path, :method => :put) do |f|%>
+    <div class="form-group col-md-12">
+        <%=f.label :choose_a_time%>
+       <%= f.time_field :time, class: 'form-control'%>
+       <%= f.hidden_field :status,:value => "pending"%>
+        <%= f.hidden_field :id,:value => @booking.id%>
+        <%= f.hidden_field :cost,:value => @booking.vendor.rate(@booking.property)%>
+      </div>
+    <div class="col-md-12">
+       <%= f.submit "Confirm Booking", class: 'btn btn-success' %>
+    </div>
+  <%end%>
+</div>
+</div>

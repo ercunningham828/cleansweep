@@ -174,12 +174,35 @@ margin: 4px;
     background-color:#CC4646;
     border-color:#FFB8B8;
 }
-.panel-heading h3{
+
+.booking-select a{
+    color: #fff;
+    background-color:#CC4646;
+    border-color:#FFB8B8;
+    font-size:18;
+}
+.booking-select {
+    color: #fff;
+    background-color:#CC4646;
+    border-color:#FFB8B8;
+    display: inline-block;
+      min-width: 10px;
+      padding: 3px 7px;
+      font-weight: bold;
+      line-height: 1;
+      vertical-align: baseline;
+      white-space: nowrap;
+      text-align: center;
+      border-radius: 10px;
+}
+.confirmation a{
+    color: #fff;
+}
+.panel-heading h4{
     color: #fff;
     background-color:#CC4646;
     border-color:#FFB8B8;
 }
-
 .panel-heading{
     background-color:#CC4646;
 }
@@ -193,6 +216,21 @@ margin: 4px;
 .tab-content{
     margin: 30px;
   min-height: 500px;
+}
+
+.sidemenu li a {
+    color:#fff;
+    background-color: #CC4646;
+}
+
+.sidemenu li.active a {
+    background-color:#fff;
+    color: #CC4646;
+}
+
+.sidemenu li.active > a:focus {
+    background-color:#fff;
+    color: #CC4646;
 }
 /* Header 
 ----------------------------------------------*/

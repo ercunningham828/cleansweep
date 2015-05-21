@@ -10,17 +10,29 @@ require 'faker'
    emily.skip_confirmation!
    emily.save!
 
-   #Create a property for Emily
+   #Create an Illinois property for Emily
    property=emily.properties.new(
-    name: "Emily's House",
+    name: "Emily's Illinois House",
     street_address: "250 Lehigh Lane",
     city: "Bloomingdale",
     state: "IL",
     zipcode: "60108",
+    bathrooms: 3,
+    bedrooms: 3,
+    )
+   property.save!
+
+   #Create a Wisconsin property for Emily
+   wisconsin=emily.properties.new(
+    name: "Emily's Wisconsin House",
+    street_address: "123 Campus Drive",
+    city: "Madison",
+    state: "WI",
+    zipcode: "53703",
     bathrooms: 2,
     bedrooms: 2,
     )
-   property.save!
+   wisconsin.save!
 
   # Create Admin user
     admin = User.new(
@@ -47,7 +59,7 @@ require 'faker'
    cleaner.skip_confirmation!
    cleaner.save!
 
-  #create 10 different vendors
+  #create 10 different vendors in 60108
 
   10.times do 
     vendor=User.new(
@@ -60,7 +72,25 @@ require 'faker'
       bathroom_rate: 10 + rand(5),
       zipcode: 60108,
       )
-    vendor.email="#{vendor.name.split(' ').join}@cleaner.com"
+    vendor.email="#{vendor.name.split(' ').join}@illinoiscleaner.com"
+    vendor.skip_confirmation!
+    vendor.save!
+  end
+
+  #create 10 different vendors in 53703
+
+  10.times do 
+    vendor=User.new(
+      name: Faker::Name.name,
+      email: Faker::Internet.email,
+      password: Faker::Lorem.characters(10),
+      role: "Vendor",
+      base_rate: 20 + rand(15),
+      bedroom_rate: 5 + rand(10),
+      bathroom_rate: 10 + rand(5),
+      zipcode: 53703,
+      )
+    vendor.email="#{vendor.name.split(' ').join}@wisconsincleaner.com"
     vendor.skip_confirmation!
     vendor.save!
   end

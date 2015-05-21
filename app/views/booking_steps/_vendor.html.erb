@@ -1,0 +1,14 @@
+<div class="panel">
+<div class="panel-heading">
+<h4><i class="glyphicon glyphicon-user"></i> <%=vendor.name%></h4></div>
+<div class="panel-body">
+  <div class="col-md-8">
+  <body><b>Vendor's Price: </b><%=vendor.rate(@property)%></body>
+</br>
+  <body><b>Rating:</b></body>
+</div>
+<div class="col-md-4">
+  <span class="booking-select"><%=link_to "Select Vendor", next_wizard_path(:booking=>@booking,:vendor=>vendor)%></span>
+</div>
+</div>
+</div>

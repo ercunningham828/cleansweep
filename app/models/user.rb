@@ -1,5 +1,6 @@
 class User < ActiveRecord::Base
   has_many :properties
+  has_many :bookings
   has_one :schedule
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
@@ -17,26 +18,7 @@ class User < ActiveRecord::Base
 
   
 end
-class Customer < User;end
-class Vendor < User
-  after_create :create_schedule
-  after_initialize :set_long_lat
-  after_save :set_long_lat
-  
-  geocoded_by :coordinates
+class Customer < User
+  has_many :bookings
 
-  def set_long_lat
-    self.latitude=self.zipcode.to_s.to_lat
-    self.longitude=self.zipcode.to_s.to_lon
-  end
-
-  def create_schedule
-   schedule=Schedule.new
-   schedule.user=self
-   schedule.save
-  end
-
-  def coordinates
-    cord=[self.latitude,self.longitude]
-  end
 end
