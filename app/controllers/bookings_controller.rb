@@ -48,6 +48,13 @@ class BookingsController < ApplicationController
     redirect_to root_path(tab:"bookings")
   end
 
+  def complete
+    @booking=Booking.find(params[:id])
+    @booking.status="completed"
+    @booking.save
+    redirect_to root_path(tab:"bookings")
+  end
+
 
   private
 

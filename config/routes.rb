@@ -8,6 +8,7 @@ Rails.application.routes.draw do
       get 'confirm'
       get 'reject'
       get 'cancel'
+      get 'complete'
     end
   end
 

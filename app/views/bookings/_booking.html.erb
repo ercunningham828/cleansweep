@@ -4,6 +4,8 @@
   <div class="panel panel-success">
 <%elsif booking.status=='rejected by vendor' || booking.status=='canceled by Customer' || booking.status=='canceled by Vendor'%>
   <div class="panel panel-danger">
+ <%elsif booking.status=='completed'%>
+  <div class="panel panel-info">
 <%else%>
   <div class="panel panel-danger>
 <%end%>
@@ -36,6 +38,9 @@
   <%end%>
  <%if booking.status=='confirmed'%>
  <button class="btn btn-danger confirmation"><%=link_to "Cancel Booking", cancel_booking_path(booking), method: :get %></button>
+ <%end%>
+ <%if booking.status=='confirmed' && @user.role=='Vendor'%>
+ <button class="btn btn-info confirmation"><%=link_to "Complete Booking", complete_booking_path(booking), method: :get %></button>
  <%end%>
 </div>
 </div>
