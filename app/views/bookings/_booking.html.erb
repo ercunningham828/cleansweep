@@ -2,7 +2,7 @@
   <div class="panel panel-warning">
 <%elsif booking.status=='confirmed'%>
   <div class="panel panel-success">
-<%elsif booking.status=='rejected' || booking.status=='canceled by Customer' || booking.status=='canceled by Vendor'%>
+<%elsif booking.status=='rejected by vendor' || booking.status=='canceled by Customer' || booking.status=='canceled by Vendor'%>
   <div class="panel panel-danger">
 <%else%>
   <div class="panel panel-danger>

@@ -1,4 +1,4 @@
- <%if @user.role=='Vendor'%>
+<%if @user.role=='Vendor'%>
 <script>
   $(document).ready(function () {
     $('a[data-toggle="tab"]').on('shown.bs.tab', function (e) {
@@ -16,8 +16,8 @@
 <%end%>
 
 <div class="page">
-  <div class="row">
-    <div class="col-md-8">
+<div class="row">
+   <div class="col-md-8">
      <div class="media">
        <div class="media-body">
          <h2 class="media-heading">Welcome <%= @user.name %>!</h2>
@@ -27,57 +27,50 @@
        </div>
      </div>
    </div>
-  </div>
+ </div>
 
 
-  <div class="page">
-    <div class="row">
-      <div class="tabbable tabs-left">
-        <ul class="nav nav-tabs">
-          <%if @user.role=='Vendor'%>
-             <li class="<%= 'active' if params[:tab] == 'requests' %>"><a href="#requests" data-toggle="tab">Requests</a></li>
-             <li class="<%= 'active' if params[:tab] == 'Bookings' %>"><a href="#bookings" data-toggle="tab">Bookings</a></li>
-             <li class="<%= 'active' if params[:tab] == 'Schedule' %>"><a href="#schedule" data-toggle="tab">Set Schedule</a></li>
-             <li class="<%= 'active' if params[:tab] == 'properties' %>"><a href="#properties" data-toggle="tab">Properties</a></li>
-          <%else%>
-             <li class="<%= 'active' if params[:tab] == 'Bookings' %>"><a href="#bookings" data-toggle="tab">Bookings</a></li>
-             <li class="<%= 'active' if params[:tab] == 'properties' %>"><a href="#properties" data-toggle="tab">Properties</a></li>
-          <%end%>
-        </ul>
-       <div class="tab-content">
-
-          <%if @user.role=='Vendor'%>
-            <div class="<%= if (params[:tab] == 'requests' || !params[:tab])then 'tab-pane active'  else 'tab-pane' end%>" id="requests">
-              <div class='container'>
-                <div class="media">
-                  <div class="media-body">
-                    <div class="col-md-8">
-                      <h2 class="media-heading">
-                       Requests
-                      </h2>
-                      <%= render @pending_bookings %>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          <%end%>
-        <%if @user.role=='Customer'%>
-          <div class="<%= if (params[:tab] == 'bookings' || !params[:tab])then 'tab-pane active'  else 'tab-pane' end%>" id="bookings">
-         <%else%>
-          <div class="<%= if params[:tab] == 'bookings' then 'tab-pane active'  else 'tab-pane' end%>" id="bookings">
-        <%end%>
-      <div class='container'>
-        <div class="media">
-          <div class="media-body">
-            <%if @user.properties.count<1 && @user.role=="Customer"%>
-              <p class="warning"> 
-                You have <%=pluralize(@user.properties.count, 'property')%>.  Click the "Properties" tab to create a property before booking.
-              </p>
-            <%end%>
-          </br>
-
-          <div class="row">
+<div class="page">
+<div class="row">
+   <div class="tabbable tabs-left">
+     <ul class="nav nav-tabs">
+       <%if @user.role=='Vendor'%>
+         <li class="<%= 'active' if params[:tab] == 'requests' %>"><a href="#requests" data-toggle="tab">Requests</a></li>
+         <li class="<%= 'active' if params[:tab] == 'Bookings' %>"><a href="#bookings" data-toggle="tab">Bookings</a></li>
+         <li class="<%= 'active' if params[:tab] == 'Schedule' %>"><a href="#schedule" data-toggle="tab">Set Schedule</a></li>
+         <li class="<%= 'active' if params[:tab] == 'properties' %>"><a href="#properties" data-toggle="tab">Properties</a></li>
+      <%else%>
+         <li class="<%= 'active' if params[:tab] == 'Bookings' %>"><a href="#bookings" data-toggle="tab">Bookings</a></li>
+         <li class="<%= 'active' if params[:tab] == 'properties' %>"><a href="#properties" data-toggle="tab">Properties</a></li>
+       <%end%>
+     </ul>
+    <div class="tab-content">
+      <%if @user.role=='Vendor'%>
+       <div class="<%= if (params[:tab] == 'requests' || !params[:tab])then 'tab-pane active'  else 'tab-pane' end%>" id="requests">
+        <div class='container'>
+         <div class="media">
+            <div class="media-body">
+               <h2 class="media-heading">
+                Requests
+              </h2>
+           </div>
+         </div>
+       </div>
+      </div>
+      <%end%>
+    <%if @user.role=='Customer'%>
+       <div class="<%= if (params[:tab] == 'bookings' || !params[:tab])then 'tab-pane active'  else 'tab-pane' end%>" id="bookings">
+      <%else%>
+       <div class="<%= if params[:tab] == 'bookings' then 'tab-pane active'  else 'tab-pane' end%>" id="bookings">
+      <%end%>
+        <div class='container'>
+         <div class="media">
+            <div class="media-body">
+              <%if @user.properties.count<1 && @user.role=="Customer"%>
+              <p class="warning"> You have <%=pluralize(@user.properties.count, 'property')%>.  Click the "Properties" tab to create a property before booking.</p>
+              <%end%>
+            </br>
+                <div class="row">
             <div class="col-md-12">
               <div class="col-md-8">
                 <h2 class="media-heading">
@@ -92,8 +85,9 @@
                 </div>
               </div>
             </div>
-            <div class="row">
-              <ul class="nav nav-pills nav-stacked col-md-3 sidemenu">
+            </br>
+             
+             <ul class="nav nav-pills nav-stacked col-md-3 sidemenu">
                   <li class="<%= 'active' if params[:subtab] == 'pending' %>">
                       <a href="#pending" data-toggle="tab">Pending</a>
                   </li>
@@ -108,76 +102,64 @@
                 </li>
               </ul>
 
-            <div class="tab-content">
-               <div class="<%= if (params[:subtab] == 'pending' || !params[:subtab])then 'tab-pane active'  else 'tab-pane' end%>" id="pending">
+              <div class="tab-content">
+                <div class="<%= if (params[:subtab] == 'pending' || !params[:subtab])then 'tab-pane active'  else 'tab-pane' end%>" id="pending">
                 <div class="col-md-8">
                   <h4>Pending Bookings</h4>
                   <%= render @pending_bookings %>
                </div>
               </div>
-
-             <div class="<%= if params[:subtab] == 'confirmed' then 'tab-pane active'  else 'tab-pane' end%>" id="confirmed">
+              <div class="<%= if params[:subtab] == 'confirmed' then 'tab-pane active'  else 'tab-pane' end%>" id="confirmed">
                 <div class="col-md-8">
                     <h4>Confirmed Bookings</h4>
                     <%= render @confirmed_bookings %>
                 </div>
             </div>
-
-             <div class="<%= if params[:subtab] == 'canceled' then 'tab-pane active'  else 'tab-pane' end%>" id="canceled">
+            <div class="<%= if params[:subtab] == 'canceled' then 'tab-pane active'  else 'tab-pane' end%>" id="canceled">
                 <div class="col-md-8">
                   <h4>Canceled or Rejected Bookings</h4>
                   <%= render @canceled_bookings %>
                 </div>
               </div>
-            </div>
-          </div>
-            </br>
-            
+
+              </div>
+
+
            </div>
          </div>
         </div>
        </div>
-
           <%if @user.role=='Vendor'%>
-             <div class="<%= if params[:tab] == 'schedule' then 'tab-pane active'  else 'tab-pane' end%>" id="schedule">
-              <div class='container'>
-               <div class="media">
-                  <div class="media-body">
-                      <%= render 'schedule/schedule'%>
-                 </div>
-               </div>
-              </div>
-            </div>
-        <%end%>
-
+       <div class="<%= if params[:tab] == 'schedule' then 'tab-pane active'  else 'tab-pane' end%>" id="schedule">
+        <div class='container'>
+         <div class="media">
+            <div class="media-body">
+                <%= render 'schedule/schedule'%>
+           </div>
+         </div>
+       </div>
+      </div>
+      <%end%>
        <div class="<%= if params[:tab] == 'properties' then 'tab-pane active'  else 'tab-pane' end%>" id="properties">
          <div class='container'>
            <div class="media">
-                  <div class="media-body">
-                    <h2 class="media-heading">
-                      My Properties
-                    </h2>
-                    <div class="col-md-6">
-                      <%= render @properties %>
-                    </div>
-                    <div class="col-md-4">
-                      <button class='btn btn-primary btn-lg'>
-                        <i class="glyphicon glyphicon-plus"></i>
-                        <%= link_to " New Property", new_property_path(@property) %>
-                      </button>
-                    </div>
-                  </div>
-                </div>
+            <div class="media-body">
+              <h2 class="media-heading">
+                My Properties
+              </h2>
+              <div class="col-md-6">
+                <%= render @properties %>
               </div>
            </div>
+         </div>
+       </div>
+       </div>
 
-          </div>
-        </div>
-      </div>
 
+     </div>
+   
+   </div>
 
-    </div>
-  </div>
+ </div>
 </div>
-
-
+</div>
