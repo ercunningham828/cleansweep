@@ -1,8 +1,11 @@
 Rails.application.routes.draw do
+  post '/rate' => 'rater#create', :as => 'rate'
+
   devise_for :users
   resources :users
   resources :properties
   resources :schedule
+  resources :reviews
   resources :bookings do 
     member do
       get 'confirm'

@@ -1,0 +1,30 @@
+<div class="row">
+  <div class="page">
+    <div class="col-md-8 col-md-offset-2">
+      <div class="panel">
+<div class="panel-heading">
+<h4>Review for <%=@booking.date.strftime("%B %e, %Y")%> Booking</h4></div>
+<div class="panel-body">
+  <div class="col-md-12">
+    <div class="col-md-12">
+      <body><b>Location: </b><%=@booking.property.name_and_full_address%></body>
+    </div>
+    <div class="col-md-5">
+  <body><b>Customer: </b><%=@booking.customer.name%></body>
+</br>
+<body><b>Vendor: </b><%=@booking.vendor.name%></body>
+<body><b>Rate: </b><%=@booking.cost%></body>
+</div>
+<div class="col-md-5">
+<body><b>Time: </b><%=@booking.time.strftime("%l:%M %P")%></body>
+</br>
+<body><b>Status: </b><%=@booking.status%></body>
+</div>
+</div>
+</div>
+</div>
+      <%= render partial: 'form'%>
+    </div>
+  </div>
+</div>
+

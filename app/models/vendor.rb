@@ -4,6 +4,7 @@ class Vendor < User
   after_save :set_long_lat
   
   has_many :bookings
+  has_many :reviews, through: :bookings
   geocoded_by :coordinates
 
   def set_long_lat

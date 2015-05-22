@@ -2,6 +2,8 @@ class Booking < ActiveRecord::Base
   belongs_to :customer
   belongs_to :vendor
   belongs_to :property
+  has_one :review
+  
 
   scope :pending, -> { where(status: 'pending') } 
   scope :confirmed, -> { where(status: 'confirmed') } 

@@ -42,6 +42,26 @@
  <%if booking.status=='confirmed' && @user.role=='Vendor'%>
  <button class="btn btn-info confirmation"><%=link_to "Complete Booking", complete_booking_path(booking), method: :get %></button>
  <%end%>
+ <%if booking.status=='completed' && @user.role=='Customer' && booking.review.nil?%>
+ <button class="btn btn-info confirmation"><%=link_to "Review Vendor", new_review_path(booking)%></button>
+ <%end%>
+ <%if booking.status=='completed' && @user.role=='Vendor' && booking.review.nil?%>
+ <body>
+    <b>Booking Rating:</b>
+  </br>
+      Waiting for Review
+  
+  </body>
+ <%end%>
+ <%if booking.status=='completed' && booking.review.present?%>
+  <body>
+    <b>Booking Rating:</b>
+  </br>
+      <%= (booking.review.overall_rating).times do%>
+      <i class="glyphicon glyphicon-star"></i>
+    <%end%>
+  </body>
+ <%end%>
 </div>
 </div>
 </div>

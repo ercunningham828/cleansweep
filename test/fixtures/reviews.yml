@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  booking: 
+  timeliness_rating: 1
+  professional_rating: 1
+  clean_rating: 1
+  overall_rating: 1
+
+two:
+  booking: 
+  timeliness_rating: 1
+  professional_rating: 1
+  clean_rating: 1
+  overall_rating: 1

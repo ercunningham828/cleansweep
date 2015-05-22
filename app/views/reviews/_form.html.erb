@@ -1,0 +1,15 @@
+
+<%= form_for @review do |f|%>
+    <div class="form-group col-md-12">
+     <b>Overall Rating : </b><%= rating_for @review, :overall, :star => 5 %>
+    </div>
+         <div class="form-group col-md-12">
+              <%= f.label :additional_comments%>
+            <%= f.text_area :comments, class: 'form-control',rows:8%>
+         </div>
+         <%= f.hidden_field :booking_id,:value => @booking.id%>
+      <div class="col-md-12">
+       <%= f.submit "Save", class: 'btn btn-success' %>
+      </div>
+    </div>
+   <%end%>

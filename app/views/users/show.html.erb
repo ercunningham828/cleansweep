@@ -86,7 +86,7 @@
               </ul>
 
               <div class="tab-content">
-                <div class="<%= if (params[:subtab] == 'pending' || @pending_bookings.any?) then 'tab-pane active'  else 'tab-pane' end%>" id="pending">
+                <div class="<%= if (params[:subtab] == 'pending' || (@pending_bookings.any? && params[:subtab].nil?)) then 'tab-pane active'  else 'tab-pane' end%>" id="pending">
                 <div class="col-md-10">
                   <h4>Pending Bookings</h4>
                   <%= render @pending_bookings %>
