@@ -1,4 +1,5 @@
 class Review < ActiveRecord::Base
+  ratyrate_rateable "overall"
   belongs_to :booking
-  letsrate_rateable "timeliness", "professionalism", "quality", "overall"
+  
 end

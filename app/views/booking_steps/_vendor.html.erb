@@ -5,7 +5,13 @@
   <div class="col-md-8">
   <body><b>Vendor's Price: </b><%=vendor.rate(@property)%></body>
 </br>
-  <body><b>Rating:</b></body>
+<%if vendor.rating.present?%>
+  <body><b>Rating:</b><%=vendor.rating%><%(vendor.rating.round).times do%>
+    <i class="fa fa-star"></i>
+  <%end%>(<%=link_to "read reviews", reviews_path(vendor)%>)</body>
+  <%else%>
+  <body><b>Rating:</b> none yet</body>
+  <%end%>
 </div>
 <div class="col-md-4">
   <span class="booking-select"><%=link_to "Select Vendor", next_wizard_path(:booking=>@booking,:vendor=>vendor)%></span>

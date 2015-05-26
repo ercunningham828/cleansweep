@@ -21,6 +21,8 @@
 //= require js/fancybox/jquery.fancybox.pack.js
 //= require js/owl-carousel/owl.carousel.js
 //= require bootstrap
+//= require jquery.raty
+//= require ratyrate
 //= require js/bootstrap.min.js
 //= require moment
 //= require fullcalendar

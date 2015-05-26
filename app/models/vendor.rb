@@ -24,4 +24,14 @@ class Vendor < User
   def rate(property)
     self.base_rate+(property.bathrooms*self.bathroom_rate)+(property.bedrooms*self.bedroom_rate)
   end
+
+  def update_review_score
+    self.rating=(self.reviews.sum(:overall_rating).to_f/self.reviews.count).round(2)
+    self.save
+  end
+
+  def sort_column
+    Vendor.column_names.include?(params[:sort]) ? params[:sort] : "name"
+  end
+  
 end

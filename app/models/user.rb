@@ -10,6 +10,8 @@ class User < ActiveRecord::Base
   
   self.inheritance_column = :role
 
+  
+
   def self.roles
     %w(Customer Vendor)
   end

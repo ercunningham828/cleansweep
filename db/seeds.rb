@@ -60,7 +60,7 @@ require 'faker'
    cleaner.save!
 
   #create 10 different vendors in 60108
-
+status=["confirmed","completed","pending","canceled by Customer","rejected by vendor"]
   10.times do 
     vendor=User.new(
       name: Faker::Name.name,
@@ -75,6 +75,19 @@ require 'faker'
     vendor.email="#{vendor.name.split(' ').join}@illinoiscleaner.com"
     vendor.skip_confirmation!
     vendor.save!
+
+    2.times do
+     booking=Booking.new(
+      vendor: vendor,
+      customer: emily,
+      property: property,
+      cost: 77,
+      date: Faker::Time.between(2.days.ago, Time.now),
+      time: Faker::Time.between(2.days.ago, Time.now),
+      status: status.sample,
+      )
+    booking.save!
+    end
   end
 
   #create 10 different vendors in 53703
@@ -93,6 +106,19 @@ require 'faker'
     vendor.email="#{vendor.name.split(' ').join}@wisconsincleaner.com"
     vendor.skip_confirmation!
     vendor.save!
+
+    2.times do
+     booking=Booking.new(
+      vendor: vendor,
+      customer: emily,
+      property: property,
+      cost: 77,
+      date: Faker::Time.between(2.days.ago, Time.now),
+      time: Faker::Time.between(2.days.ago, Time.now),
+      status: status.sample,
+      )
+    booking.save!
+    end
   end
 
   vendors=Vendor.all
@@ -114,6 +140,32 @@ require 'faker'
     x.schedule.sunday_start=Time.new(2000,1,1,(5+rand(4)),0,0)
     x.schedule.sunday_end=Time.new(2000,1,1,(15+rand(6)),0,0)
     x.schedule.save
+  end
+
+  #bookings for status testing
+  
+  10.times do 
+    booking=Booking.new(
+      vendor: cleaner,
+      customer: emily,
+      property: property,
+      cost: 77,
+      date: Faker::Time.between(2.days.ago, Time.now),
+      time: Faker::Time.between(2.days.ago, Time.now),
+      status: status.sample,
+      )
+    booking.save!
+  end
+#create reviews for select bookings
+  completed=Booking.where(status:"completed")
+
+  20.times do
+    review=Review.new(
+      booking: completed.sample,
+      overall_rating: 1+rand(5),
+      comments:Faker::Lorem.sentence(2),
+      )
+    review.save!
   end
 
   puts "Seed finished"

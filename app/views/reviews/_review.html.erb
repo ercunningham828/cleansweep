@@ -1,0 +1,16 @@
+<div class="panel">
+<div class="panel-heading">
+<h4><i class="glyphicon glyphicon-home"></i> Booking on <%=review.booking.date.strftime("%B %e, %Y")%></h4></div>
+<div class="panel-body">
+<body><b>Overall Rating: </b><%= (review.overall_rating.round).times do%>
+    <i class="fa fa-star"></i>
+  <%end%>
+</body>
+</br>
+<body><b>Address:</b> <%=review.booking.property.name_and_full_address%></body>
+</br>
+<body><b>Customer: </b> <%=review.booking.customer.name%></body>
+</br>
+<body><b>Additional Comments: </b> <%=review.comments%></body>
+</div>
+</div>

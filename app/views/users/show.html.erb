@@ -21,9 +21,15 @@
      <div class="media">
        <div class="media-body">
          <h2 class="media-heading">Welcome <%= @user.name %>!</h2>
-         <small>email: <%=@user.email%></small>
+         <small><b>Email: </b><%=@user.email%></small>
           </br>
-         <small>phone: <%=@user.phone_number || "na" %></small>
+         <small><b>Phone: </b><%=@user.phone_number || "na" %></small>
+         </br>
+         <%if current_user.role=="Vendor"%>
+         <small><b>Rating: </b><%=@user.rating%><%(@user.rating.round).times do%>
+    <i class="fa fa-star"></i>
+  <%end%>(<%=link_to "read reviews", reviews_path(current_user)%>)</small> 
+  <%end%>
        </div>
      </div>
    </div>

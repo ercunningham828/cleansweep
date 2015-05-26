@@ -35,7 +35,7 @@ gem "font-awesome-rails"
 gem 'geocoder'
 gem 'area'
 gem 'wicked'
-gem 'letsrate'
+gem 'ratyrate', :github => 'wazery/ratyrate'
 
 
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks

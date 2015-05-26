@@ -11,7 +11,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150522063700) do
+ActiveRecord::Schema.define(version: 20150526132615) do
+
+  create_table "average_caches", force: :cascade do |t|
+    t.integer  "rater_id"
+    t.integer  "rateable_id"
+    t.string   "rateable_type"
+    t.float    "avg",           null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "bookings", force: :cascade do |t|
     t.integer  "customer_id"
@@ -33,6 +42,14 @@ ActiveRecord::Schema.define(version: 20150522063700) do
     t.string   "name"
     t.datetime "start_at"
     t.datetime "end_at"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "overall_averages", force: :cascade do |t|
+    t.integer  "rateable_id"
+    t.string   "rateable_type"
+    t.float    "overall_avg",   null: false
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -141,6 +158,7 @@ ActiveRecord::Schema.define(version: 20150522063700) do
     t.float    "latitude"
     t.float    "longitude"
     t.integer  "zipcode"
+    t.float    "rating"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true
