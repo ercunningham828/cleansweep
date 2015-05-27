@@ -16,5 +16,129 @@
 <div class="col-md-4">
   <span class="booking-select"><%=link_to "Select Vendor", next_wizard_path(:booking=>@booking,:vendor=>vendor)%></span>
 </div>
+<div class="col-md-12">
+  <h3>Schedule</h3>
+  <table class="table">
+       
+        <thead>
+          <tr>
+            <th></th>
+            <th>Monday</th>
+            <th>Tuesday</th>
+            <th>Wednesday</th>
+            <th>Thursday</th>
+            <th>Friday</th>
+            <th>Saturday</th>
+            <th>Sunday</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">Start Time</th>
+            <td><%=if vendor.schedule.monday_start.nil? 
+                  '-' 
+                  else
+                    vendor.schedule.monday_start.strftime("%l:%M %P")
+                  end
+                %>
+            </td>
+             <td><%=if vendor.schedule.tuesday_start.nil? 
+                  '-' 
+                  else
+                    vendor.schedule.tuesday_start.strftime("%l:%M %P")
+                  end
+                %>
+            </td>
+            <td><%=if vendor.schedule.wednesday_start.nil? 
+                  '-' 
+                  else
+                    vendor.schedule.wednesday_start.strftime("%l:%M %P")
+                  end
+                %>
+            </td>
+            <td><%=if vendor.schedule.thursday_start.nil? 
+                  '-' 
+                  else
+                    vendor.schedule.thursday_start.strftime("%l:%M %P")
+                  end
+                %>
+            </td>
+            <td><%=if vendor.schedule.friday_start.nil? 
+                  '-' 
+                  else
+                    vendor.schedule.friday_start.strftime("%l:%M %P")
+                  end
+                %>
+            </td>
+            <td><%=if vendor.schedule.saturday_start.nil? 
+                  '-' 
+                  else
+                    vendor.schedule.saturday_start.strftime("%l:%M %P")
+                  end
+                %>
+            </td>
+            <td><%=if vendor.schedule.sunday_start.nil? 
+                  '-' 
+                  else
+                    vendor.schedule.sunday_start.strftime("%l:%M %P")
+                  end
+                %>
+            </td>
+          </tr>
+          <tr>
+            <th scope="row">End Time</th>
+            <td><%=if vendor.schedule.monday_end.nil? 
+                  '-' 
+                  else
+                    vendor.schedule.monday_end.strftime("%l:%M %P")
+                  end
+                %>
+            </td>
+            <td><%=if vendor.schedule.tuesday_end.nil? 
+                  '-' 
+                  else
+                    vendor.schedule.tuesday_end.strftime("%l:%M %P")
+                  end
+                %>
+            </td>
+            <td><%=if vendor.schedule.wednesday_end.nil? 
+                  '-' 
+                  else
+                    vendor.schedule.wednesday_end.strftime("%l:%M %P")
+                  end
+                %>
+            </td>
+            <td><%=if vendor.schedule.thursday_end.nil? 
+                  '-' 
+                  else
+                    vendor.schedule.thursday_end.strftime("%l:%M %P")
+                  end
+                %>
+            </td>
+            <td><%=if vendor.schedule.friday_end.nil? 
+                  '-' 
+                  else
+                    vendor.schedule.friday_end.strftime("%l:%M %P")
+                  end
+                %>
+            </td>
+            <td><%=if vendor.schedule.saturday_end.nil? 
+                  '-' 
+                  else
+                    vendor.schedule.saturday_end.strftime("%l:%M %P")
+                  end
+                %>
+            </td>
+            <td><%=if vendor.schedule.sunday_end.nil? 
+                  '-' 
+                  else
+                    vendor.schedule.sunday_end.strftime("%l:%M %P")
+                  end
+                %>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
 </div>
 </div>

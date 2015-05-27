@@ -6,7 +6,11 @@ class BookingStepsController < ApplicationController
     if step !="wicked_finish"
     @booking = Booking.find(params[:booking])
     @property=@booking.property
-    @vendors=Vendor.near(@property.coordinates)
+    if params[:sort]=="rate"
+      @vendors=Vendor.near(@property.coordinates).sort {|a,b| a.rate(@property) <=> b.rate(@property)}
+    else
+      @vendors=Vendor.near(@property.coordinates).order(sort_column + " " + sort_direction)
+    end
   
     if params[:vendor].present?
       @vendor=Vendor.find(params[:vendor])
